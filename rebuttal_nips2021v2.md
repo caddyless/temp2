@@ -6,7 +6,7 @@ We thank all reviewers for the valuable comments.  We have carefully proofread t
 
 To further answer your question,  we have designed a new pre-training scheme based on multi-dataset training, that is, co-training a shared model with dataset-specific classification heads and then finetuning at different downstream. This scheme is a lit bit like [33] but without ImageNet pre-training and subsequent label unification for a fair comparison. The results are shown in the table below.  It can be seen that if manual label integration is not performed, the performance of this scheme is far lower than our method (71.19% vs 73.32%) because this scheme cannot model the relationship between multi-datasets.  The above discussion proves the effectiveness of our MDP pipeline towards multi-dataset training.（这一段要加吗？会不会有点奇怪？但没了感觉太单薄了...）
 
-| Method     | Pretrained Dataset | COCO mIoU |
+| Method     | Pretrained Dataset |  mIoU |
 | :--------- | :----------------: | :-------: |
 | Multi-head |   VOC and ADE20K   |   71.19   |
 | MDP        |   VOC and ADE20K   |   73.32   |
