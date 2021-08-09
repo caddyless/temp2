@@ -189,7 +189,7 @@ Line 169: What is "interactive" about this?
 
 同review2 Q3
 
-We mentioned in Ln261 that our method is more efficient because the number of images we use is much smaller than that of ImageNet pretraining. Our code has not been fully optimized, but the current running time of a batch is basically the same as moco v2. Taking into account the reduction in the amount of images, our method is more efficient. We will provide the detailed numbers in the revised version.
+We mentioned in Ln261 that our method is more efficient because the number of images we use is much smaller than that of ImageNet pretraining. Our code has not been fully optimized, but the current running time of a batch is basically the same as moco v2. Taking into account the reduction in the number of images, our method is more efficient. We will provide the detailed numbers in the revised version.
 
 **Q7: [The sparse coding part needs more analysis and justification]：** 
 
