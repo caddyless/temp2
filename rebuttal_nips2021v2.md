@@ -157,11 +157,9 @@ $r_{w}=W \sqrt{1-\lambda}$, $r_{h}=H \sqrt{1-\lambda}$
 
 **Q3: [Wording and expression need to be revised]：**  Thanks for your detailed comments, we have carefully proofread the paper in the revised version. Some more appropriate expressions have also been updated.
 
-额外要写的：
+As to some other points:
 
-“I would argue that this is not a "unified" model because the categories are not unified as in other papers like [30][33]”
-
-Line 160: What is "dirty data"? 
+In Ln 160,  "dirty data" means some pixels which have false labels. These dirty data may be caused by incorrect labeling of the data set itself, or it may be introduced by downsampling operation.
 
 Line 169: What is "interactive" about this?
 
