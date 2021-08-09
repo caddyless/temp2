@@ -55,8 +55,8 @@ During the experiment, we adopted two different settings：1）Not pushing the p
 | Method        | Pretrained Dataset | VOC mIoU | Cityscapes mIoU |
 | :------------ | :----------------: | :------: | :-------------: |
 | MDP           |   VOC and ADE20K   |  71.98   |      75.37      |
-| MDP with CPC1 |   VOC and ADE20K   |  70.88   |      75.50      |
-| MDP with CPC2 |   VOC and ADE20K   |  71.84   |      76.53      |
+| MDP with CSC1 |   VOC and ADE20K   |  70.88   |      75.50      |
+| MDP with CSC2 |   VOC and ADE20K   |  71.84   |      76.53      |
 
 
 
