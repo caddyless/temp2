@@ -76,7 +76,7 @@ Similarly, our region-level mixing and pixel-level mixing are also innovative ap
 
 同review2 Q3
 
-至于额外提到的，下游用了相同的数据集的问题，我们在文章的Ln262-267以及Ln299-306有进行讨论
+As to the probelm of including the dataset of the final testing data，we discuss about it in the Ln262-267 and Ln299-306 of paper, we will also add more unseen downstream in the future.
 
 **Q4: [The authors mention that they do not unify the label space, but it is not reflected]:** The label unification in our paper means mapping the labels between different datasets to a unified label space to tackle the label inconsistency between datasets, which requires a lot of manual definition and alignment. However, just as indicated in Ln 134, our method just concatenates the label space of different data sets without any manual integration and alignment. This allows our method to better deal with multi-datasets problems. In fact, we also tried the label rough unification on the basis of MDP at the early stages (only the data preprocessing is slightly different from now) but we did not see any improvement. We analyze that it is the feature-remapping in the fine-tuning stage that automatically realizes the label re-unification.
 
@@ -101,7 +101,7 @@ We also further explored the results using some similar settings: 1) Training on
 
 **Q6: [The ablation study in Table 2  and Table 3  does not seem complete and are all worse than ImageNet pretraining]:** Table 2 studies on hyper-parameters and the type of memory bank using only VOC dataset so the results are worse tham ImageNet pretraining. We think that the setting of hyper-parameters can be explored in a single dataset for efficiency since directly adding all segmentation datasets for ablation study is too expensive.  Table 3 studies the cross-dataset mixing strategies. We have reported the results of using VOC and ADE20K in the paper and we believe that the huge improvement in the results can prove the effectiveness of our strategies. From another perspective, the results gap between using a single dataset like VOC and using ImageNet also proves the effectiveness of our MDP.
 
-**Q7: [Wording and expression need to be revised]**  Thanks for your detailed comments, we have carefully proofread the paper in the revised version. Some more appropriate expressions have also been updated.
+**Q7: [Some terms are quite vague and cannot provide the audience a good motivation and a big picture of the proposed method.]**  Thanks for your detailed comments, we have carefully proofread the paper in the revised version. Some more appropriate expressions have also been updated.
 
 
 
@@ -129,13 +129,7 @@ We admit that changing to a better backbone or adding some additional tricks can
 
 ### **To Reviewer  LjH9:**
 
-**Q1: [Wording and expression need to be revised]:** Thanks for your detailed comments, we have carefully proofread the paper in the revised version. Some more appropriate expressions have also been updated.
-
-额外解释：
-
-“pixel-to-class and pixel-to-prototype ””class-to-prototype“
-
-"extend the pixel-to-class hard coding to cross-class mapping via pixel-to-class sparse coding" 
+**Q1: [The presentation is not very good]:** Thanks for your detailed comments, we have carefully proofread the paper in the revised version. Some more appropriate expressions have also been updated.
 
 **Q2: [Pixel-to-Pixel baseline]:** Thanks for your suggestion. we add an experiment to test the results of pixel-to-pixel baseline on three different downstream. The model was pre-trained for 100 epochs using VOC and ADE20K dataset and the results are reported in the table below. Our MDP achieves performance gain on both of three datasets. We have added this results in the revised version.
 
