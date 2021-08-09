@@ -133,10 +133,10 @@ We admit that changing to a better backbone or adding some additional tricks can
 
 **Q2: [Pixel-to-Pixel baseline]:** Thanks for your suggestion. we add an experiment to test the results of pixel-to-pixel baseline on three different downstream. The model was pre-trained for 100 epochs using VOC and ADE20K dataset and the results are reported in the table below. Our MDP achieves performance gain on both of three datasets. We have added this results in the revised version.
 
-| Method         | Pretrained Dataset | VOC mIoU | ADE20K mIoU | Cityscapes mIoU |
-| :------------- | :----------------: | :------: | :---------: | :-------------: |
-| Pixel-to-Pixel |   VOC and ADE20K   |  71.19   |    38.81    |      77.17      |
-| MDP            |   VOC and ADE20K   |  73.32   |    40.15    |      77.75      |
+| Method         | Pretrained Dataset | VOC mIoU | ADE20K mIoU | 
+| :------------- | :----------------: | :------: | :---------: | 
+| Pixel-to-Pixel |   VOC and ADE20K   |  71.19   |    38.81    | 
+| MDP            |   VOC and ADE20K   |  73.32   |    40.15    | 
 
 **Q3: [How does a simple merging strategy address such a complex problem when dealing with multiple datasets]:** 
 
