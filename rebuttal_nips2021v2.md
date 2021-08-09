@@ -174,7 +174,7 @@ Line 169: What is "interactive" about this?
 | Multi-head |   VOC and ADE20K   |   71.19   |
 | MDP        |   VOC and ADE20K   |   73.32   |
 
-**Q5: [Evaluation on COCO-stuff-val? ]：** Thanks for pointing out that. We did not report the test results on COCO because MMsegmentaion did not provide COCO evaluation code and we worry that the results of our report are not representative. In fact, we also have our own implemented finetune results of 80k iterations on the COCO dataset. As shown in the table below, our method also boosts supervised ImageNet pretraining results on COCO for a large margin, from 35.25% to 38.37%.
+**Q5: [Evaluation on COCO-stuff-val? ]：** Thanks for pointing out that. We did not report the test results on COCO because MMsegmentaion did not provide COCO evaluation code and we worry that the results of our report are not representative. （浩航师兄觉得没必要提这个）In fact, we also have our own implemented finetune results of 80k iterations on the COCO dataset. As shown in the table below, our method also boosts supervised ImageNet pretraining results on COCO for a large margin, from 35.25% to 38.37%.
 
 | Method     |  Pretrained Dataset  | COCO mIoU |
 | :--------- | :------------------: | :-------: |
