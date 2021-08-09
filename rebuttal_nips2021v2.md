@@ -6,14 +6,14 @@ We thank all reviewers for the valuable comments.  We have carefully proofread t
 
 To further answer your question,  we have designed a new pre-training scheme based on multi-dataset training, that is, co-training a shared model with dataset-specific classification heads and then finetuning at different downstream. This scheme is a lit bit like [33] but without ImageNet pre-training and subsequent label unification for a fair comparison. The results are shown in the table below.  It can be seen that if manual label integration is not performed, the performance of this scheme is far lower than our method (71.19% vs 73.32%) because this scheme cannot model the relationship between multi-datasets.  The above discussion proves the effectiveness of our MDP pipeline towards multi-dataset training.（这一段要加吗？会不会有点奇怪？但没了感觉太单薄了...）
 
-| Method     | Pretrained Dataset |  mIoU |
+| Method     | Pretrained Dataset |  VOC mIoU |
 | :--------- | :----------------: | :-------: |
 | Multi-head |   VOC and ADE20K   |   71.19   |
 | MDP        |   VOC and ADE20K   |   73.32   |
 
 **Q2: [Adding this pre-training strategy on a well-pretraind backbone]:**  Thanks for pointing out this. We add our pre-training strategy on supervised ImageNet pretrained models. We pretrain our model on VOC and ADE20K  dataset for 100 epochs. The results are shown in the table below. The results reveal that using a two-stages pretraining strategy can boost the one-stage pre-training for a large margin, from 73.32% to 75.7%. But compared to the supervised ImageNet pretrained model, we do not observe significant performance improvement (75.63% vs 75.70%). We think this is because the training objectives of the two stages pre-training tasks are completely different.
 
-| Method     |               Pretrained Dataset               | mIoU  |
+| Method     |               Pretrained Dataset               | VOC mIoU  |
 | :--------- | :--------------------------------------------: | :---: |
 | Supervised |                    ImageNet                    | 75.63 |
 | MDP        |                 VOC and ADE20K                 | 73.32 |
@@ -31,7 +31,7 @@ To further answer your question,  we have designed a new pre-training scheme bas
 
 **Q2: [Using only COCO in the pretraining]:** Thanks for your suggestions! We compare the results of three different settings over 100 epochs pre-training in the following table: 1) MDP pretraining using only VOC dataset(~10k images), 2) MDP pretraining using VOC and ADE20K dataset (~30k images) 3) MDP pretraining using only COCO dataset(~100k images). The COCO pre-training results do achieve high performance since the COCO dataset is three times larger than the combination of other two datasets. However, we want to emphasize the advantages of our method when the amount of data is comparable. Compared with the first setting using only VOC dataset, our 'VOC+ADE20K' configuration has achieved a huge performance improvement. At the same time, this configuration has surpassed the results of supervised ImageNet pretraining on the ADE20k and Cityscapes downstream, shown in Tab. 1 of our paper. We think these results can prove the benefits of our MDP.
 
-| Method | Pretrained Dataset | mIoU  |
+| Method | Pretrained Dataset | VOC mIoU  |
 | :----- | :----------------: | :---: |
 | MDP    |        VOC         | 70.92 |
 | MDP    |   VOC and ADE20K   | 73.32 |
@@ -41,7 +41,7 @@ To further answer your question,  we have designed a new pre-training scheme bas
 
 Yes, we admit that the data scale can not be comparable to the scale of data annotation and maybe we should use a more appropriate expression here. However, it is precise because of the difficulty of labeling that a single large-scale pixel-level labeled dataset is difficult to obtain. Our method provides a co-pretraining strategy using data from different sources and from the perspective of data amount, our performance is very outstanding.  In addition, we can also utilize the class prototype from a small amount of pixel-level labeled data to perform data mining using unlabeled images.  The results below show toy experiment results using no-label COCO data, which reviews that using a smaller amount of unlabeled images (compared to the scale of ImageNet) can further improve the performance.
 
-| Method |       Pretrained Dataset       | mIoU  |
+| Method |       Pretrained Dataset       | VOC mIoU  |
 | :----- | :----------------------------: | :---: |
 | MDP    |         VOC and ADE20K         | 73.32 |
 | MDP    | VOC, ADE20K and COCO(no label) | 74.74 |
@@ -80,7 +80,7 @@ As to the probelm of including the dataset of the final testing data，we discus
 
 **Q4: [The authors mention that they do not unify the label space, but it is not reflected]:** The label unification in our paper means mapping the labels between different datasets to a unified label space to tackle the label inconsistency between datasets, which requires a lot of manual definition and alignment. However, just as indicated in Ln 134, our method just concatenates the label space of different data sets without any manual integration and alignment. This allows our method to better deal with multi-datasets problems. In fact, we also tried the label rough unification on the basis of MDP at the early stages (only the data preprocessing is slightly different from now) but we did not see any improvement. We analyze that it is the feature-remapping in the fine-tuning stage that automatically realizes the label re-unification.
 
-| Method | Pretrained Dataset | Label Unification | mIoU  |
+| Method | Pretrained Dataset | Label Unification | VOC mIoU  |
 | :----- | :----------------: | :---------------: | :---: |
 | MDP    |   VOC and ADE20K   |        No         | 71.93 |
 | MDP    |   VOC and ADE20K   |        Yes        | 71.91 |
@@ -94,7 +94,7 @@ We think your description is inappropriate and the comparison is unfair. The sem
 
 We also further explored the results using some similar settings: 1) Training on the whole COCO dataset without label processing operation from scratch. 2) Training on the whole COCO dataset without label processing operation based on ImageNet pretraining.  The COCO training lasts 80k iteration and the finetune is conducted on VOC for 40k iteration. Results are shown in the table below. The performance is far from satisfactory compared to our method, and we also notice that: 1) ImageNet pretraining is necessary. Training COCO from scratch and then finetuning on VOC obtain worse performance. 2) Data selection and label processing are important. We notice that the loss of our exploration setting (without label processing) is relatively low at the beginning of the finetune stage, but then it has been fluctuating at a higher value for a long time. We think this is due to the label space gap between COCO and VOC. Compared to the above setting, our method aims at making the features distinguishable, which results in much better performance.
 
-| Method                      | Pretrained Dataset | mIOU  |
+| Method                      | Pretrained Dataset | VOC mIOU  |
 | :-------------------------- | :----------------: | :---: |
 | Supervised training on COCO |         -          | 68.48 |
 | Supervised training on COCO |      ImageNet      | 74.51 |
@@ -121,7 +121,7 @@ We admit that changing to a better backbone or adding some additional tricks can
 
 **Q3: [Will the results be further boosted with longer training iterations]：** Yes, the results will be further boosted with longer training iterations. However, as our implementation aims to show the effectiveness of multi-dataset pretraining, we do not further training the model for convenience in our paper.  The results in the table below may shed light on the boosting of longer training, where we pretrain our model on VOC dataset and use pixel-to-prototype contrastive loss. With the increase of epochs, we view better experimental results.
 
-| Method             | Pretrained Dataset | Epoch | mIoU  |
+| Method             | Pretrained Dataset | Epoch | VOC mIoU  |
 | :----------------- | :----------------: | :---: | :---: |
 | Pixel-to-Prototype |        VOC         |  100  | 69.72 |
 | Pixel-to-Prototype |        VOC         |  200  | 70.56 |
@@ -172,7 +172,7 @@ Line 169: What is "interactive" about this?
 
 **Q4: [Training a network on all four datasets with dataset-specific classification heads as a pre-training step]：** Thanks for your suggestion!  We think this is a result worth exploring and have added related experiments. Based on VOC and ADE20K dataset, we use the same learning rate and learning rate decay settings as MMsegmention, and unify the training period to 100 epochs for easy comparison. It can be seen from the table below that the performance of this scheme is far lower than our method (71.19% vs 73.32%). We think this is because this scheme does not model the correlation between the various datasets, and each head is independent of each other.  Our MDP can perform joint learning across datasets, which makes our features more discriminative. We have added this results in the revised version.
 
-| Method     | Pretrained Dataset | COCO mIoU |
+| Method     | Pretrained Dataset | VOC mIoU |
 | :--------- | :----------------: | :-------: |
 | Multi-head |   VOC and ADE20K   |   71.19   |
 | MDP        |   VOC and ADE20K   |   73.32   |
