@@ -137,7 +137,7 @@ We admit that changing to a better backbone or adding some additional tricks can
 
 同review3 Q4
 
-**Q4: [In region-level mixing, how are binary masks constructed]：**The mask $M$ can be represented by bounding box coordinates $\mathbf{B}=\left(r_{x}, r_{y}, r_{w}, r_{h}\right)$.  Among them, $r_{x}$ and $r_{y}$ are uniformly sampled within the width scope and height scope of the image respectively to determine the start point of the bounding box:
+**Q4: [In region-level mixing, how are binary masks constructed]：** The mask $M$ can be represented by bounding box coordinates $\mathbf{B}=\left(r_{x}, r_{y}, r_{w}, r_{h}\right)$.  Among them, $r_{x}$ and $r_{y}$ are uniformly sampled within the width scope and height scope of the image respectively to determine the start point of the bounding box:
 
 $r_{x} \sim$ Unif $(0, W)$, $r_{y} \sim$ Unif $(0, H)$
 
