@@ -36,7 +36,7 @@ To further answer your question,  we have designed a new pre-training scheme bas
 | MDP    |   VOC and ADE20K   | 73.32 |
 | MDP    |        COCO        | 76.85 |
 
-**Q3: [Considering the number of mask label instances, the COCO dataset may surpass Imagenet in terms of scale.]** 数据集比较不公平（数据挖掘的结果贴上嘛？算不算额外补充实验?（暂时先贴上了））
+**Q3: [Considering the number of mask label instances, the COCO dataset may surpass Imagenet in terms of scale.]** 
 
 Yes, we admit that the data scale can not be comparable to the scale of data annotation and maybe we should use a more appropriate expression here. However, it is precise because of the difficulty of labeling that a single large-scale pixel-level labeled dataset is difficult to obtain. Our method provides a co-pretraining strategy using data from different sources and from the perspective of data amount, our performance is very outstanding.  In addition, we can also utilize the class prototype from a small amount of pixel-level labeled data to perform data mining using unlabeled images.  The results below show toy experiment results using no-label COCO data, which reviews that using a smaller amount of unlabeled images (compared to the scale of ImageNet) can further improve the performance.
 
@@ -71,7 +71,7 @@ Similarly, our region-level mixing and pixel-level mixing are also innovative ap
 
 同review2 Q4
 
-**Q3: [The dataset comparison is not fair as the paper uses pixel-level annotations]** 数据量比较不公平
+**Q3: [The dataset comparison is not fair as the paper uses pixel-level annotations]** 
 
 同review2 Q3
 
