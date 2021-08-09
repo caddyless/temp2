@@ -161,7 +161,7 @@ As to some other points:
 
 In Ln 160,  "dirty data" means some pixels which have false labels. These dirty data may be caused by incorrect labeling of the data set itself, or it may be introduced by downsampling operation.
 
-In Ln 169， "interactive" means pixels will be pushed away or pulled close to class prototypes that classes are not in the current image.
+In Ln 169， "interactive" means pixels will be also pushed away or pulled close to class prototypes that classes are not in the current image.
 
 **Q4: [Training a network on all four datasets with dataset-specific classification heads as a pre-training step]：** Thanks for your suggestion!  We think this is a result worth exploring and have added related experiments. Based on VOC and ADE20K dataset, we use the same learning rate and learning rate decay settings as MMsegmention, and unify the training period to 100 epochs for easy comparison. It can be seen from the table below that the performance of this scheme is far lower than our method (71.19% vs 73.32%). We think this is because this scheme does not model the correlation between the various datasets, and each head is independent of each other.  Our MDP can perform joint learning across datasets, which makes our features more discriminative. We have added this results in the revised version.
 
