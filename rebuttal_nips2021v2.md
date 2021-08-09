@@ -11,11 +11,10 @@ To further answer your question,  we have designed a new pre-training scheme bas
 | Multi-head |   VOC and ADE20K   |   71.19   |
 | MDP        |   VOC and ADE20K   |   73.32   |
 
-**Q2: [Adding this pre-training strategy on a well-pretraind backbone]:**  Thanks for pointing out this. We add our pre-training strategy on supervised ImageNet pretrained models. We pretrain our model on VOC and ADE20K  dataset for 100 epochs. The results are shown in the table below. The results reveal that using a two-stages pretraining strategy can boost the one-stage pre-training for a large margin, from 73.32% to 75.7%. But compared to the supervised ImageNet pretrained model, we do not observe significant performance improvement (75.63% vs 75.70%). We think this is because the training objectives of the two stages pre-training tasks are completely different.
+**Q2: [Adding this pre-training strategy on a well-pretraind backbone]:**  Thanks for pointing out this. We add our pre-training strategy on supervised ImageNet pretrained models. We pretrain our model on VOC and ADE20K  dataset for 100 epochs. The results are shown in the table below. The results reveal that using a two-stages pretraining strategy can boost the one-stage pre-training for a large margin, from 73.32% to 75.7%. We will added more ablation study about it in the revised version.
 
 | Method     |               Pretrained Dataset               | VOC mIoU  |
 | :--------- | :--------------------------------------------: | :---: |
-| Supervised |                    ImageNet                    | 75.63 |
 | MDP        |                 VOC and ADE20K                 | 73.32 |
 | MDP        | ImageNet(1st stage), VOC and ADE20K(2nd stage) | 75.70 |
 
