@@ -144,7 +144,7 @@ We also further explored the results using some similar settings: 1) Training on
 
 1. We use the a standard ResNet-50 backbone other than ResNet-50 v1c In order to compare our results with Imagenet pretraining.
 
-2. We removed the auxiliary head to better show the effect of backbone pre-training, while the auxiliary head is very helpful for the segmentation performance improvement.
+2. We remove the auxiliary head to better show the effect of backbone pre-training, while the auxiliary head is very helpful for the segmentation performance improvement.
 
 We admit that changing to a better backbone or adding some additional tricks can further improve the accuracy,  but this is out of the scope of this paper.
 
@@ -162,7 +162,6 @@ We admit that changing to a better backbone or adding some additional tricks can
 
 **Q2: [Pixel-to-Pixel baseline]:** Thanks for your suggestion. we add an experiment to test the results of pixel-to-pixel baseline on three different downstream. The model was pre-trained for 100 epochs using VOC and ADE20K dataset and the results are reported in the table below. Our MDP achieves performance gain on both of three datasets. We have added this results in the revised version.
 
-（之前是觉得这里cityscapes跑得太高了）
 
 | Method         | Pretrained Dataset | VOC mIoU | ADE20K mIoU | Cityscpases mIoU |
 | :------------- | :----------------: | :------: | :---------: | :--------------: |
@@ -180,8 +179,6 @@ $r_{x} \sim$ Unif $(0, W)$, $r_{y} \sim$ Unif $(0, H)$
 $r_{w}$ and $r_{h}$ determine the end point of the bounding box, and it is set according to a combination ratio $\lambda$ to make the cropped area ratio $\frac{r_{w} r_{h}}{W H}=1-\lambda$:
 
 $r_{w}=W \sqrt{1-\lambda}$, $r_{h}=H \sqrt{1-\lambda}$
-
-(编译之后就可以看了)
 
 ### **To Reviewer  9Qx8 :**
 
