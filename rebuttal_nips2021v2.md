@@ -148,7 +148,7 @@ We also further explored the results using some similar settings: 1) Training on
 
 We admit that changing to a better backbone or adding some additional tricks can further improve the accuracy,  but this is out of the scope of this paper.
 
-**Q3: [Will the results be further boosted with longer training iterations]：** Yes, the results will be further boosted with longer training iterations.  The results in the table below may shed light on the boosting of longer training, where we pretrain our model on VOC dataset and use pixel-to-prototype contrastive loss. With the increase of epochs, we view better experimental results. However, as we traget at demostrating the effectiveness of multi-dataset pretraining, we do not finetune the model for a long time for efficiency.
+**Q3: [Will the results be further boosted with longer training iterations]：** Yes, the results will be further boosted with longer training iterations.  However, as we traget at demostrating the effectiveness of multi-dataset pretraining, we do not finetune the model for a long time for efficiency. The results in the table below may shed light on the boosting of longer training, where we pretrain our model on VOC dataset and use pixel-to-prototype contrastive loss. With the increase of epochs, we view better experimental results. 
 
 | Method             | Pretrained Dataset | Epoch | VOC mIoU |
 | :----------------- | :----------------: | :---: | :------: |
