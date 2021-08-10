@@ -52,14 +52,12 @@ Thanks for pointing out this. Considering the annotation cost, we agree that it 
 
 **Q4: [The sparse coding part needs more analysis and justification]**
 
-The sparse coding module is designed to consider the inter-class similarity especially for cross datasets for better transferability and we find that the pixle-to-prototype cross dataset sparse coding is beneficial to increase the intra-class diversity, and is **especially beneficial for downstream tasks that have non-overlap labels as the pretraining stage**. In particualr, we adapt two different settings：CSC-1) Not pushing the pixel and its top-k similar prototype far away;  CSC2) pulling the pixel and its top-k similar prototype close (sparse coding). The results are shown in the table below. CSC1 does not directly push the class of VOC away from other similarity class of VOC or other datasets, which makes its results on VOC worse. However, the results on Cityscapes are still comparable. This indicates that even if the features between the categories are not completely pushed away, making the features within one category distinguishable can still maintain a good accuracy in the unseen downstream. CSC2 2 increases intra-classes discrimination while ensuring inter-class discrimination. This makes the performance of VOC still comparable, and the performance of Cityscapes been further improved. During our experiment, the training loss in the finetune stage of CSC2 2 is much lower than that in CSC1, which indicates that our sparse coding scheme is effective.【你这里的setting1 还是奇奇怪怪的，所有的pushing都没有？到底想表达啥意思】
+The cross dataset sparse coding (CSC) module is designed to consider the inter-class similarity and intra-class diversity,  which we find is **especially beneficial for downstream tasks that have non-overlap labels as the pretraining stage**. In particualr, we adapt two different settings：MDP without CSC and the proposed MDP training strategy, and the results are shown in the table below (Table 4 in the original paper). MDP increases intra-classes diversity via pulling each pixel-level embeddings to its corresponding top-k class prototypes,  although the VOC results are comparable, the performance of Cityscapes can be further improved. Notably, **the training loss in the finetune stage of MDP is much lower than that without CSC for pretraining**, which indicates that our sparse coding scheme is effective.
 
-| Method        | Pretrained Dataset | VOC mIoU | Cityscapes mIoU |
-| :------------ | :----------------: | :------: | :-------------: |
-| MDP           |   VOC and ADE20K   |  71.98   |      75.37      |
-| MDP with CSC1 |   VOC and ADE20K   |  70.88   |      75.50      |
-| MDP with CSC2 |   VOC and ADE20K   |  71.84   |      76.53      |
-
+| Method          | Pretrained Dataset | VOC mIoU | Cityscapes mIoU |
+| :-------------- | :----------------: | :------: | :-------------: |
+| MDP without CSC |   VOC and ADE20K   |  71.98   |      75.37      |
+| MDP             |   VOC and ADE20K   |  71.84   |      76.53      |
 
 
 ### **To Reviewer qZDT:**
