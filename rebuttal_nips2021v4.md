@@ -1,9 +1,4 @@
-【这里我们需要陈述整篇文章的贡献点，增加对R3的质疑的一个简要总结，主要包括nolvety 以及实验性能的问题】
-
-We thank all reviewers for their valuable comments. This paper proposes a unified framework to enable multi-dataset pretraining, that for the first time take full advantage of the fragmented annotations of
-4 different datasets, and all reviewers are positive and interested in this novel settings, as far as we know, we are the first to rethinking pretraining for semantic segmentation. In the following, we answer the concerns of each reviewer one by one. 
-
-The main concern of the We aruge that there exists task gap when using classification based pretrained model like ImageNet for segmentation task, and hope to make good advantages of available annotations for segmentation pretraining. 
+We thank all reviewers for their valuable comments. The highlight is that it is not optimal in current computer vision tasks that makes use of the ImageNet pretrained model for downstream tasks like segmentation, since there exists task gap when using classification based pretrained model for segmentation task. Considering that the pixel-level annotations is time-consuming, we hope to make good advantages of the available, fragmented annotations for segmentation pretraining, while does not require any human intervention. As far as we know, we are the first to rethinking pretraining for semantic segmentation, and all reviewers are positive and interested in this novel settings. In the following, we answer the concerns of each reviewer one by one. 
 
 ### **To Reviewer wmH9:**[这个是一对一回答，直接贴在每一个问题下面]
 
