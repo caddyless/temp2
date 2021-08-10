@@ -185,7 +185,7 @@ $r_{w}=W \sqrt{1-\lambda}$, $r_{h}=H \sqrt{1-\lambda}$
 
 ### **To Reviewer  9Qx8 :**
 
-**Q1: [Why the pixel-to-pixel loss in Equation (2) cannot simply be formulated over multiple images as wel]:** 
+**Q1: [Why the pixel-to-pixel loss in Equation (2) cannot simply be formulated over multiple images as well]:** 
 
 We have tried to expand pixel-to-pixel loss across images, but our model was collapsed under this setting. We discuss the difficulty of expanding pixel-to-pixel loss across images and analysis why the collapse occurs below.
 
