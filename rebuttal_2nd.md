@@ -21,7 +21,7 @@ Thanks for your suggestion.  we clarify that:
    | MDP        | ImageNet(first stage), VOC+ADE20K(2nd stage) |  100  |  75.70   | 41.57 **(2.21$\uparrow$)** |
    | MDP        | ImageNet(first stage), VOC+ADE20K(2nd stage) |  200  |  76.24   | 41.93 **(2.57$\uparrow$)** |
 
-**Q2: it might be better to compare with the model for standard trained weights on segmentation datasets, initialized from ImageNet. Currently, it looks like the performance gain comes from ImageNet pre-training but does not show the advantage of MDP**  
+**Q2: it might be better to compare with the model for standard trained weights on segmentation datasets, initialized from ImageNet. Currently, it looks like the performance gain comes from ImageNet pre-training but does not show the advantage of MDP.**  
 
 Thanks for your comments. As shown in the Table for Q1, MDP can further improve the results even with ImageNet pretrained weights (75.63->76.24 for VOC, 39.36->41.93 for ADE20K, 200 epochs). The performance gain of ADE20K is larger than VOC, possibly due to the larger domain gap of ImageNet and ADE20K. We would add these results in the revised version.  
 
@@ -35,7 +35,7 @@ To further demonstrate the effectiveness of MDP, we add another setting, i.e.,  
 | MDP                                        | COCO               |  76.85 **(1.22$\uparrow$)**  |
 | MDP                                        | ImageNet-> COCO    |  77.56 **(1.93$\uparrow$)**  |
 
-**Q3: [Report full results for ablation study]:**  
+**Q3: Report full results for ablation study.**  
 
 Thanks for point out this.  We follow your suggestion and pre-train the model for 200 epochs to verify the performance. The results below are for the hyper-parameters setting.  We can see that although the performance difference between settings become smaller, the previous conclusions in our paper still hold, that is:
 
