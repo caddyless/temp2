@@ -2,7 +2,7 @@
 
 We appreciate that the reviewer is positive about our MDP setting, and for the main concern about **the effects of using ImageNet pretraining**, we add some comparative experiments  and detailed responses are listed below. 
 
-**Q1: only pre-training from scratch using segmentation datasets" may not be very useful as ImageNet pre-trained weights are always available. **
+**Q1: only pre-training from scratch using segmentation datasets" may not be very useful as ImageNet pre-trained weights are always available.**
 
 Thanks for your suggestion.  we clarify that: 
 
