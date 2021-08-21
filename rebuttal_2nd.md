@@ -15,11 +15,11 @@ Thanks for your suggestion.  we clarify that:
    | Method     |              Pretrained Dataset              | Epoch | VOC mIoU |        ADE20K mIoU        |
    | :--------- | :------------------------------------------: | :---: | :------: | :-----------------------: |
    | Supervised |                   ImageNet                   |   -   |  75.63   |         **39.36**         |
-   | MDP        |                  VOC+ADE20K                  |  100  |  73.32   | 40.17**(0.81$\uparrow$)** |
-   | MDP        |                  VOC+ADE20K                  |  200  |  74.30   | 40.83**(1.47$\uparrow$)** |
-   | MDP        |               VOC+ADE20K+COCO                |  200  |  77.79   | 42.69**(3.33$\uparrow$)** |
-   | MDP        | ImageNet(first stage), VOC+ADE20K(2nd stage) |  100  |  75.70   | 41.57**(2.21$\uparrow$)** |
-   | MDP        | ImageNet(first stage), VOC+ADE20K(2nd stage) |  200  |  76.24   | 41.93**(2.57$\uparrow$)** |
+   | MDP        |                  VOC+ADE20K                  |  100  |  73.32   | 40.17 **(0.81$\uparrow$)** |
+   | MDP        |                  VOC+ADE20K                  |  200  |  74.30   | 40.83 **(1.47$\uparrow$)** |
+   | MDP        |               VOC+ADE20K+COCO                |  200  |  77.79   | 42.69 **(3.33$\uparrow$)** |
+   | MDP        | ImageNet(first stage), VOC+ADE20K(2nd stage) |  100  |  75.70   | 41.57 **(2.21$\uparrow$)** |
+   | MDP        | ImageNet(first stage), VOC+ADE20K(2nd stage) |  200  |  76.24   | 41.93 **(2.57$\uparrow$)** |
 
 **Q2: it might be better to compare with the model for standard trained weights on segmentation datasets, initialized from ImageNet. Currently, it looks like the performance gain comes from ImageNet pre-training but does not show the advantage of MDP**  
 
@@ -31,9 +31,9 @@ To further demonstrate the effectiveness of MDP, we add another setting, i.e.,  
 | ------------------------------------------ | ------------------ | :-------------------------: |
 | Supervised (customized cross entropy loss) | COCO               |            68.48            |
 | Supervised                                 | ImageNet           |          **75.63**          |
-| Supervised (customized cross entropy loss) | ImageNet -> COCO   | 74.51**(1.12$\downarrow$)** |
-| MDP                                        | COCO               |  76.85**(1.22$\uparrow$)**  |
-| MDP                                        | ImageNet-> COCO    |  77.56**(1.93$\uparrow$)**  |
+| Supervised (customized cross entropy loss) | ImageNet -> COCO   | 74.51 **(1.12$\downarrow$)** |
+| MDP                                        | COCO               |  76.85 **(1.22$\uparrow$)**  |
+| MDP                                        | ImageNet-> COCO    |  77.56 **(1.93$\uparrow$)**  |
 
 **Q3: [Report full results for ablation study]:**  
 
